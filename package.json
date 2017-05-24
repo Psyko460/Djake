@@ -1,0 +1,32 @@
+{
+  "name": "djake",
+  "version": "1.0.0",
+  "description": "Yet Another Music Player",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies" : {
+    "express" : "4.15.3",
+    "bootstrap-v4-dev" : "4.0.0-alpha.5",
+    "sequelize" : "3.30.4",
+    "mysql" : "2.3.10",
+    "passport" : "0.3.2",
+    "passport-local" : "1.0.0",
+    "body-parser" : "1.17.2",
+    "express-session" : "1.15.3",
+    "bcrypt-nodejs" : "0.0.3",
+    "express-handlebars" : "3.0.0",
+    "dotenv" : "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Psyko460/Djake.git"
+  },
+  "author": "Psyko460, Shiks67, Golvar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Psyko460/Djake/issues"
+  },
+  "homepage": "https://github.com/Psyko460/Djake#readme"
+}

@@ -1,0 +1,17 @@
+{
+
+    "development": {
+
+        "username": "jake",
+
+        "password": "tesmauvais",
+
+        "database": "djake",
+
+        "host": "psyko460.fr",
+
+        "dialect": "mysql"
+
+    }
+
+}
