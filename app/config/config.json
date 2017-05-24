@@ -2,16 +2,43 @@
 
     "development": {
 
-        "username": "jake",
+        "username": "root",
 
-        "password": "tesmauvais",
+        "password": null,
 
         "database": "djake",
 
-        "host": "psyko460.fr",
+        "host": "127.0.0.1",
+
+        "dialect": "mysql"
+
+    },
+
+    "test": {
+
+        "username": "root",
+
+        "password": null,
+
+        "database": "djake",
+
+        "host": "127.0.0.1",
+
+        "dialect": "mysql"
+
+    },
+
+    "production": {
+
+        "username": "root",
+
+        "password": null,
+
+        "database": "djake",
+
+        "host": "127.0.0.1",
 
         "dialect": "mysql"
 
     }
-
 }

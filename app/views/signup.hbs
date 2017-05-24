@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title></title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -8,20 +7,27 @@
   	<script src="/js/jquery.min.js"></script>
   	<script src="/js/bootstrap.min.js"></script>
 </head>
-
 <body>
+
     <form id="signup" name="signup" method="post" action="/signup">
-        <label for="email">Email Address</label>
-        <input class="text" name="email" type="email" />
-        <label for="firstname">Firstname</label>
-        <input name="firstname" type="text" />
-        <label for="lastname">Lastname</label>
-        <input name="lastname" type="text" />
-        <label for="password">Password</label>
-        <input name="password" type="password" />
-        <input class="btn" type="submit" value="Sign Up" />
+        <div>
+            <label for="email">Adresse e-mail :</label>
+            <input class="text" name="email" type="email" />
+        </div>
+        <div>
+            <label for="firstname">Prénom :</label>
+            <input name="firstname" type="text" />
+        </div>
+        <div>
+            <label for="lastname">Nom :</label>
+            <input name="lastname" type="text" />
+        </div>
+        <div>
+            <label for="password">Mot de passe :</label>
+            <input name="password" type="password" />
+        </div>
+        <input class="btn" type="submit" value="S'inscrire" />
     </form>
 
 </body>
-
 </html>

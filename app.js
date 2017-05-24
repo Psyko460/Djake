@@ -27,7 +27,7 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap-v4-dev/dist/
 app.use('/css', express.static(__dirname + '/views/css'));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname+'/views/index.html'));
+  res.sendFile(path.join(__dirname+'/views/index.hbs'));
 });
 
 
