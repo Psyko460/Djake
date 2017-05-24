@@ -21,10 +21,10 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
-app.use('/js', express.static(__dirname + '/node_modules/bootstrap-v4-dev/dist/js'));
-app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap-v4-dev/dist/css'));
-app.use('/css', express.static(__dirname + '/views/css'));
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap-v4-dev/dist/js'));
+app.use('/jqs', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/assets', express.static(__dirname + '/app/views/assets'));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname+'/views/index.hbs'));
