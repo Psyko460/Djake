@@ -1,10 +1,24 @@
 h1{
+	text-align: center;
+	margin-top: 5%;
     font-size: 100px;
     color:#ecf0f1;
 }
 
 body{
     background-color: #34495e;
+    color: #ecf0f1;
+}
+
+label{
+	
+	display: block;
+
+}
+
+.jumbotron{
+	margin-top: 10%;
+	background-color:#2c3e50;
 }
 
 .container{
@@ -15,3 +29,4 @@ body{
     text-align :center;
     margin-top: 5%;
 }
+
