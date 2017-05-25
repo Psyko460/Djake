@@ -7,17 +7,14 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
-
-app.set('views', './app/views')
-app.engine('hbs', exphbs({
-    extname: '.hbs'
-}));
-app.set('view engine', '.hbs');
+var fs = require('fs');
+var hbs = require('hbs');
 
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap-v4-dev/dist/css'));
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap-v4-dev/dist/js'));
 app.use('/jqs', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/assets', express.static(__dirname + '/app/views/assets'));
+hbs.registerPartials(__dirname + '/app/views/partials');
 
 
 //BodyParser
@@ -38,11 +35,10 @@ app.use(passport.session()); // persistent login sessions
 //Handlebars
 app.set('views', './app/views')
 app.engine('hbs', exphbs({
-    extname: '.hbs'
+    extname: '.hbs',
+    partialsDir: __dirname + '/app/views/partials'
 }));
 app.set('view engine', '.hbs');
-
-
 
 app.get('/', function(req, res) {
     res.render('index');
@@ -52,17 +48,14 @@ app.get('/', function(req, res) {
 var models = require("./app/models");
 
 //Routes
-
 var authRoute = require('./app/routes/auth.js')(app,passport);
 
 
 //load passport strategies
-
 require('./app/config/passport/passport.js')(passport, models.user);
 
 
 //Sync Database
-
 models.sequelize.sync().then(function() {
     console.log('Nice! Database looks fine')
 }).catch(function(err) {

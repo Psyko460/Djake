@@ -2,13 +2,13 @@
 
     "development": {
 
-        "username": "root",
+        "username": "djake",
 
-        "password": null,
+        "password": "Mg8VkAYw",
 
         "database": "djake",
 
-        "host": "127.0.0.1",
+        "host": "bdd.imkwx.fr",
 
         "dialect": "mysql"
 
