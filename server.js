@@ -12,6 +12,7 @@ var hbs = require('hbs');
 
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+app.use('/fa', express.static(__dirname + '/node_modules/font-awesome'));
 app.use('/jqs', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/assets', express.static(__dirname + '/app/views/assets'));
 hbs.registerPartials(__dirname + '/app/views/partials');
