@@ -1,4 +1,8 @@
 var authController = require('../controllers/authcontroller.js');
+var fs = require('fs');
+var path = require("path");
+var fileName = path.join(__dirname, '..', 'config', 'config.json')
+var config = require(path.join(__dirname, '..', 'config', 'config.json'));
 
 module.exports = function(app, passport) {
 
@@ -6,8 +10,8 @@ module.exports = function(app, passport) {
     app.get('/connexion', authController.signin);
     app.get('/logout',isLoggedIn, authController.logout);
     app.get('/accueil',authController.index);
-
     app.get('/dashboard',isLoggedIn, authController.dashboard);
+    app.get('/options',isLoggedIn, authController.options);
 
 
 
@@ -23,6 +27,20 @@ module.exports = function(app, passport) {
             failureRedirect: '/connexion'
         }
     ));
+
+    app.post('/registerT411', (req, res) => {
+      // req.body.login & req.body.password
+      if(req.body.login != null && req.body.password != null ) {
+        config.t411.username = req.body.login;
+        config.t411.password = req.body.password;
+        fs.writeFile(fileName, JSON.stringify(config), function (err) {
+          if (err) return console.log(err);
+          console.log(JSON.stringify(config));
+          console.log('writing to ' + fileName);
+        });
+      }
+      res.redirect('/options');
+    });
 
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated())

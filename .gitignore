@@ -50,4 +50,7 @@ node_modules
 .git
 npm-debug.log
 autre
+/config/config.json
 config.json
+.config.json
+./config/config.json

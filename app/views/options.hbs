@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Djake | Options</title>
+    <script src="/jqs/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/hbs/handlebars.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+{{> dashNavbar}}
+  <div clas="container">
+    <ul class="nav nav-tabs bg-inverse" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#t411" role="tab" >T411</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#transimission" role="tab">Transimission</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="t411" role="tabpanel">
+        <div class="container">
+          <h3 class="display-4">T411</h3>
+          <hr />
+          <form id="formT411" name="formT411" method="post" action="/registerT411">
+            <div>
+              <input class="inputSignin" name="login" placeholder="Example@djake.fr" type="email" required />
+            </div>
+            <div>
+                <input class="inputSignin" name="password" placeholder="Mot de passe" type="password" id="password" required />
+            </div>
+            <button class="btn btn-outline-success" type="submit">Enregistrer</button>
+          </form>
+        </div>
+      </div>
+      <div class="tab-pane" id="transimission" role="tabpanel">transimission</div>
+    </div>
+  </div>
+{{> player}}
+</body>
+</html>

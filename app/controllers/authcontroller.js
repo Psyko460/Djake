@@ -16,6 +16,10 @@ exports.dashboard = function(req, res) {
     res.render('dashboard');
 };
 
+exports.options = function(req, res) {
+    res.render('options');
+};
+
 exports.logout = function(req, res) {
     req.session.destroy(function(err) {
         res.redirect('/');
