@@ -14,31 +14,22 @@
 
     },
 
-    "test": {
+    "t411": {
 
         "username": "root",
 
-        "password": null,
-
-        "database": "djake",
-
-        "host": "127.0.0.1",
-
-        "dialect": "mysql"
+        "password": "password"
 
     },
 
-    "production": {
+    "transmission": {
 
         "username": "root",
 
-        "password": null,
+        "password": "password",
 
         "database": "djake",
 
-        "host": "127.0.0.1",
-
-        "dialect": "mysql"
-
+        "host": "127.0.0.1"
     }
 }

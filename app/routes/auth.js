@@ -4,7 +4,7 @@ module.exports = function(app, passport) {
 
     app.get('/inscription', authController.signup);
     app.get('/connexion', authController.signin);
-    app.get('/logout',authController.logout);
+    app.get('/logout',isLoggedIn, authController.logout);
     app.get('/accueil',authController.index);
 
     app.get('/dashboard',isLoggedIn, authController.dashboard);

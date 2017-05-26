@@ -15,8 +15,8 @@ app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 app.use('/fa', express.static(__dirname + '/node_modules/font-awesome'));
 app.use('/jqs', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/assets', express.static(__dirname + '/app/views/assets'));
+app.use('/hbs', express.static(__dirname + '/node_modules/handlebars/dist'));
 hbs.registerPartials(__dirname + '/app/views/partials');
-
 
 //BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));

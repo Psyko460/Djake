@@ -2,12 +2,18 @@
 <html>
 <head>
     <title>Dashboard</title>
-    <script src="/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/style.css">
     <script src="/jqs/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/hbs/handlebars.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
+{{> dashNavbar}}
+<div class="content">
+
+</div>
 {{> player}}
 </body>
 </html>
