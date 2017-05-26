@@ -10,8 +10,8 @@ var exphbs = require('express-handlebars');
 var fs = require('fs');
 var hbs = require('hbs');
 
-app.use('/css', express.static(__dirname + '/node_modules/bootstrap-v4-dev/dist/css'));
-app.use('/js', express.static(__dirname + '/node_modules/bootstrap-v4-dev/dist/js'));
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
 app.use('/jqs', express.static(__dirname + '/node_modules/jquery/dist'));
 app.use('/assets', express.static(__dirname + '/app/views/assets'));
 hbs.registerPartials(__dirname + '/app/views/partials');

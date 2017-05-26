@@ -9,7 +9,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
-    "bootstrap-v4-dev": "4.0.0-alpha.6",
+    "bootstrap": "4.0.0-alpha.6",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
