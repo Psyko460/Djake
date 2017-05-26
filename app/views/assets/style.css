@@ -44,6 +44,10 @@ label{
     height: 100px;
     width: 100px;
 }
+
+.on{
+    color: green;
+}
 /*End Player*/
 
 
