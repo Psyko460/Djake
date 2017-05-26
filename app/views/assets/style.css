@@ -1,8 +1,8 @@
 h1{
 	text-align: center;
 	margin-top: 5%;
-    font-size: 100px;
-    color:#ecf0f1;
+  font-size: 100px;
+  color:#ecf0f1;
 }
 
 body{
@@ -11,7 +11,7 @@ body{
 }
 
 label{
-	
+
 	display: block;
 
 }
@@ -29,4 +29,3 @@ label{
     text-align :center;
     margin-top: 5%;
 }
-
