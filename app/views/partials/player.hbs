@@ -7,12 +7,11 @@
     <div class="row col-sm-10">
 
         <div class="offset-sm-4 col-sm-4 player-btn">
-            <i class="fa fa-random fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-random fa-2x onable" aria-hidden="true"></i>
             <i class="fa fa-backward fa-2x" aria-hidden="true"></i>
             <i class="fa fa-play-circle-o fa-4x" aria-hidden="true"></i>
-            <i class="fa fa-pause-circle-o fa-4x" aria-hidden="true"></i>
             <i class="fa fa-forward fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-repeat fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-repeat fa-2x onable" aria-hidden="true"></i>
         </div>
 
 
@@ -23,4 +22,22 @@
     </div>
 </div>
 
-<script></script>
+<script>$(".fa-play-circle-o").on("click", function () {
+    var $this = $(this);
+    if ($this.hasClass("fa-play-circle-o")) {
+        $this.removeClass("fa-play-circle-o");
+        $this.addClass("fa-pause-circle-o");
+    } else {
+        $this.removeClass("fa-pause-circle-o");
+        $this.addClass("fa-play-circle-o");
+    }
+});
+$(".onable").on("click", function () {
+    var $this = $(this);
+    if ($this.hasClass("on")) {
+        $this.removeClass("on");
+    } else {
+        $this.addClass("on");
+    }
+});
+</script>
