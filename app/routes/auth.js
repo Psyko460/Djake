@@ -30,9 +30,9 @@ module.exports = function(app, passport) {
 
     app.post('/registerT411', (req, res) => {
       // req.body.login & req.body.password
-      if(req.body.login != null && req.body.password != null ) {
-        config.t411.username = req.body.login;
-        config.t411.password = req.body.password;
+      if(req.body.loginT411 != null && req.body.passwordT411 != null ) {
+        config.t411.username = req.body.loginT411;
+        config.t411.password = req.body.passwordT411;
         fs.writeFile(fileName, JSON.stringify(config), function (err) {
           if (err) return console.log(err);
           console.log(JSON.stringify(config));
