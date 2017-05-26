@@ -19,7 +19,8 @@ module.exports = function(sequelize, Sequelize) {
         },
 
         username: {
-            type: Sequelize.TEXT
+            type: Sequelize.TEXT,
+            allowNull: false
         },
 
         about: {
@@ -28,6 +29,7 @@ module.exports = function(sequelize, Sequelize) {
 
         email: {
             type: Sequelize.STRING,
+            allowNull : false,
             validate: {
                 isEmail: true
             }
