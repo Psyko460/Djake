@@ -2,15 +2,28 @@
 <html>
 <head>
     <title>Djake | Connexion</title>
+    <script src="/jqs/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fa/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/style.css">
-    <script src="/jqs/jquery.min.js"></script>
 </head>
-<body>
+<body class="bodySignin">
 {{> siteNavbar}}
 
-
+<div class="container text-sm-center">
+  <h4 class="display-4">Connexion</h4>
+  <hr style="width:30%;background-color:white;" />
+  <form id="signin" name="signin" method="post" action="signin">
+    <div>
+      <input class="inputSignin" name="email" type="email" placeholder="Example@djake.fr" required="required" />
+    </div>
+    <div>
+      <input class="inputSignin" name="password" type="password" placeholder="Password" required="required" />
+    </div>
+      <button class="btn btn-outline-success" type="submit"><i class="fa fa-rocket" aria-hidden="true"></i> Let's go !</button>
+  </form>
+</div>
 
 {{> siteFooter}}
 </body>
