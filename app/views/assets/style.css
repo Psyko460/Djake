@@ -10,7 +10,7 @@ label{
 }
 
 .jumbotron{
-	margin-top: 10%;
+	
 	background-color:#2c3e50;
 }
 
@@ -57,10 +57,16 @@ label{
 /* signin.hbs */
 
 .bodySignin {
-	background-image: url('/assets/img/loginBackground.jpg');
+	background-image: url('/assets/img/signinBackground.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+.bodySignup{
+	background-image: url('/assets/img/signupBackground.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+   }
 
 .labelSignin {
 

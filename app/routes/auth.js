@@ -12,7 +12,7 @@ module.exports = function(app, passport) {
     app.get('/accueil',authController.index);
     app.get('/dashboard',isLoggedIn, authController.dashboard);
     app.get('/options',isLoggedIn, authController.options);
-
+    app.get('/informations', authController.informations);
 
 
 
@@ -27,6 +27,8 @@ module.exports = function(app, passport) {
             failureRedirect: '/connexion'
         }
     ));
+
+    
 
     app.post('/registerT411', (req, res) => {
       // req.body.login & req.body.password
