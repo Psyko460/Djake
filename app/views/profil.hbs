@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Djake | Profil </title>
+    <script src="/jqs/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/hbs/handlebars.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+  <body>
+{{>navbar}}
+
+    <div class="container text-sm-center">
+      <h3 class="display-3">Profil</h3>
+    </div>
+<br>
+    <div class="row col-12">
+      <div class="offset-1 col-2">
+        <img src="assets/img/test1.jpg " class="rounded" alt="Photo de profil">
+        <input type="file" name="Changer de photo de profil" accept="iamge/*" onchange="document.my_im.src=this.value;">
+      </div>
+
+        <div class="offset-2 col-6">
+          <form id="formProfil" name="formProfil" method="post" action="/registerUser">
+          <div class="form-group row">
+          <label for="username" class="col-2 col-form-label">Nom d'utilisateur</label>
+          <div class="col-10">
+            <input class="inputSignin" name="pseudo" type="text" placeholder="XxDarkSasukexX" required />
+          </div>
+          </div>
+
+        <div class="form-group row">
+          <label for="email" class="col-2 col-form-label">Adresse mail</label>
+          <div class="col-10">
+            <input class="inputSignin" type="search" placeholder="Example@djake.com" required />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="date de naissance" class="col-2 col-form-label">Date de naissance</label>
+          <div class="col-10">
+            <input class="inputSignin" type="email" placeholder="01/02/2001" required/>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="pays" class="col-2 col-form-label">Pays</label>
+          <div class="col-10">
+            <input class="inputSignin" type="email" placeholder="USA" required />
+          </div>
+        </div>
+        <button class="btn btn-outline-success" type="submit">Enregistrer</button>
+      </form>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>

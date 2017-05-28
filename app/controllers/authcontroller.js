@@ -23,6 +23,10 @@ exports.dashboard = function(req, res) {
     res.render('dashboard');
 };
 
+exports.profil = function(req, res) {
+    res.render('profil');
+};
+
 exports.options = function(req, res) {
     res.render('options', {usernameT411: config.t411.username, passwordT411: config.t411.password, usernameTransmission: config.transmission.username, passwordTransmission: config.transmission.password, hostTransmission: config.transmission.hostPort});
 };
