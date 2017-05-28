@@ -31,6 +31,17 @@ exports.options = function(req, res) {
     res.render('options', {usernameT411: config.t411.username, passwordT411: config.t411.password, usernameTransmission: config.transmission.username, passwordTransmission: config.transmission.password, hostTransmission: config.transmission.hostPort});
 };
 
+exports.profilEdit = function(req, res){
+    var User = user;
+      User.update({_id: req.session.passport.user.id}, {
+        username : req.body.username,
+        email: req.body.email,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+      }),
+      res.redirect('/dashboard')
+  };
+
 exports.logout = function(req, res) {
     req.session.destroy(function(err) {
         res.redirect('/');

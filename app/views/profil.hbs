@@ -24,34 +24,40 @@
       </div>
 
         <div class="offset-2 col-6">
-          <form id="formProfil" name="formProfil" method="post" action="/registerUser">
-          <div class="form-group row">
-          <label for="username" class="col-2 col-form-label">Nom d'utilisateur</label>
-          <div class="col-10">
-            <input class="inputSignin" name="pseudo" type="text" placeholder="XxDarkSasukexX" required />
-          </div>
-          </div>
+          <form id="formProfil" name="formProfil" method="post" action="/registerUser/<%= currentUser._id %>" >
+            <div class="form-group row">
+            <label for="username" class="col-2 col-form-label">Nom d'utilisateur</label>
+            <div class="col-10">
+              <input class="inputSignin" name="username" type="text" placeholder="XxDarkSasukexX" required />
+            </div>
+            </div>
 
-        <div class="form-group row">
-          <label for="email" class="col-2 col-form-label">Adresse mail</label>
-          <div class="col-10">
-            <input class="inputSignin" type="search" placeholder="Example@djake.com" required />
+          <div class="form-group row">
+            <label for="email" class="col-2 col-form-label">Adresse mail</label>
+            <div class="col-10">
+              <input class="inputSignin" type="email" name="email" placeholder="Example@djake.com" required />
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="date de naissance" class="col-2 col-form-label">Date de naissance</label>
-          <div class="col-10">
-            <input class="inputSignin" type="email" placeholder="01/02/2001" required/>
+          <div class="form-group row">
+            <label for="pays" class="col-2 col-form-label">Nom</label>
+            <div class="col-10">
+              <input class="inputSignin" name = "lastname" placeholder="DUMOULIN" required />
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="pays" class="col-2 col-form-label">Pays</label>
-          <div class="col-10">
-            <input class="inputSignin" type="email" placeholder="USA" required />
+          <div class="form-group row">
+            <label for="pays" class="col-2 col-form-label">Prenom</label>
+            <div class="col-10">
+              <input class="inputSignin" name = "firstname" placeholder="Kévin" required />
+            </div>
           </div>
-        </div>
-        <button class="btn btn-outline-success" type="submit">Enregistrer</button>
-      </form>
+          <div class="form-group row">
+            <label for="pays" class="col-2 col-form-label">Pays</label>
+            <div class="col-10">
+              <input class="inputSignin" name = "pays" placeholder="USA" required />
+            </div>
+          </div>
+          <button class="btn btn-outline-success" type="submit">Enregistrer</button>
+        </form>
         </div>
 
       </div>

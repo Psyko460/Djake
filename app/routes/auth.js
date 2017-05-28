@@ -20,6 +20,8 @@ module.exports = function(app, passport) {
     app.get('/resultat', t411Controller.t411Result); //tests
     app.post('/searchT411', t411Controller.searchT411);
 
+    app.post('/registerUser/{{id}}', isLoggedIn, authController.profilEdit);
+
     app.post('/signup', passport.authenticate('local-signup', {
             successRedirect: '/dashboard',
             failureRedirect: '/inscription'
@@ -44,8 +46,6 @@ module.exports = function(app, passport) {
       }
       res.redirect('/options');
     });
-
-
 
     app.post('/registerTransmission', (req, res) => {
       if(req.body.loginTransmission != null && req.body.passwordTransmission != null && req.body.hostTransmission != null ) {
