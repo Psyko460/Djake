@@ -41,8 +41,9 @@ app.engine('hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 
-app.get('/', function(req, res) {
-    res.render('index');
+app.use(function (req, res, next) {
+    res.locals.logged = req.isAuthenticated();
+    next();
 });
 
 //Models
