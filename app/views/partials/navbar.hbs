@@ -1,0 +1,41 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    {{#if logged}}
+        <a class="navbar-brand" href="/dashboard">Djake</a>
+    {{else}}
+        <a class="navbar-brand" href="/">Djake</a>
+    {{/if}}
+  <ul class="navbar-nav mr-auto">
+      {{#if logged }}
+          <li class="nav-item">
+        <a class="nav-link" href="/dashboard"><i class="fa fa-home" aria-hidden="true"></i> Accueil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/options"><i class="fa fa-cogs" aria-hidden="true"></i> Paramètres</a>
+    </li>
+{{ else }}
+    <li class="nav-item">
+        <a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-question-circle-o" aria-hidden="true"></i> Informations</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://github.com/Psyko460/Djake"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+    </li>
+{{/if}}
+  </ul>
+    {{#if logged}}
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="text" placeholder="Recherche...">
+            <button class="btn btn-outline-success mr-sm-2" type="submit">Go !</button>
+        </form>
+        <button class="btn btn-outline-danger" onclick="window.location.href='/logout'">Déconnexion</button>
+    {{ else}}
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <button class="btn btn-outline-success" onclick="window.location.href='/connexion'">Connexion</button>
+                <button class="btn btn-outline-info" onclick="window.location.href='/inscription'">Inscription</button>
+            </li>
+        </ul>
+    {{/if}}
+</nav>
