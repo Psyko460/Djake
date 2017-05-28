@@ -25,8 +25,8 @@
 {{/if}}
   </ul>
     {{#if logged}}
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="text" placeholder="Recherche...">
+        <form class="form-inline" method="post" action="/searchT411">
+            <input class="form-control mr-sm-2" type="text" name="searchMusic" id="searchMusic" placeholder="Recherche...">
             <button class="btn btn-outline-success mr-sm-2" type="submit">Go !</button>
         </form>
         <button class="btn btn-outline-danger" onclick="window.location.href='/logout'">Déconnexion</button>

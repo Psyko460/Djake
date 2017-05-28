@@ -1,4 +1,5 @@
 var authController = require('../controllers/authcontroller.js');
+var t411Controller = require('../controllers/t411controller.js');
 var fs = require('fs');
 var path = require("path");
 var fileName = path.join(__dirname, '..', 'config', 'config.json')
@@ -14,6 +15,9 @@ module.exports = function(app, passport) {
     app.get('/options',isLoggedIn, authController.options);
     app.get('/informations', authController.informations);
 
+    app.get('/resultat', t411Controller.t411Result); //tests
+    app.post('/searchT411', t411Controller.searchT411);
+
     app.post('/signup', passport.authenticate('local-signup', {
             successRedirect: '/dashboard',
             failureRedirect: '/inscription'
@@ -26,7 +30,7 @@ module.exports = function(app, passport) {
         }
     ));
 
-    
+
 
     app.post('/registerT411', (req, res) => {
       if(req.body.loginT411 != null && req.body.passwordT411 != null ) {
