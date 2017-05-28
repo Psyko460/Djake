@@ -54,3 +54,4 @@ autre
 config.json
 .config.json
 ./config/config.json
+app/config/config.json
