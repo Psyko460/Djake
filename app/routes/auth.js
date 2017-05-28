@@ -38,8 +38,6 @@ module.exports = function(app, passport) {
         config.t411.password = req.body.passwordT411;
         fs.writeFile(fileName, JSON.stringify(config), (err) => {
           if (err) return console.log(err);
-          console.log(JSON.stringify(config));
-          console.log('writing to ' + fileName);
         });
       }
       res.redirect('/options');
@@ -52,8 +50,6 @@ module.exports = function(app, passport) {
         config.transmission.hostPort = req.body.hostTransmission;
         fs.writeFile(fileName, JSON.stringify(config), (err) => {
           if (err) return console.log(err);
-          console.log(JSON.stringify(config));
-          console.log('writing to ' + fileName);
         });
       }
       res.redirect('/options');

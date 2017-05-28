@@ -29,6 +29,17 @@
             <input class="form-control mr-sm-2" type="text" name="searchMusic" id="searchMusic" placeholder="Recherche...">
             <button class="btn btn-outline-success mr-sm-2" type="submit">Go !</button>
         </form>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="/assets/img/test1.jpg" class="rounded mr-sm-2" style="width:42px;height:42px;">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Profil</a>
+              <a class="dropdown-item" href="#">Notifications</a>
+            </div>
+          </li>
+        </ul>
         <button class="btn btn-outline-danger" onclick="window.location.href='/logout'">Déconnexion</button>
     {{ else}}
         <ul class="navbar-nav">
