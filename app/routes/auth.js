@@ -27,11 +27,24 @@ module.exports = function(app, passport) {
     ));
 
     app.post('/registerT411', (req, res) => {
-      // req.body.login & req.body.password
       if(req.body.loginT411 != null && req.body.passwordT411 != null ) {
         config.t411.username = req.body.loginT411;
         config.t411.password = req.body.passwordT411;
-        fs.writeFile(fileName, JSON.stringify(config), function (err) {
+        fs.writeFile(fileName, JSON.stringify(config), (err) => {
+          if (err) return console.log(err);
+          console.log(JSON.stringify(config));
+          console.log('writing to ' + fileName);
+        });
+      }
+      res.redirect('/options');
+    });
+
+    app.post('/registerTransmission', (req, res) => {
+      if(req.body.loginTransmission != null && req.body.passwordTransmission != null && req.body.hostTransmission != null ) {
+        config.transmission.username = req.body.loginTransmission;
+        config.transmission.password = req.body.passwordTransmission;
+        config.transmission.hostPort = req.body.hostTransmission;
+        fs.writeFile(fileName, JSON.stringify(config), (err) => {
           if (err) return console.log(err);
           console.log(JSON.stringify(config));
           console.log('writing to ' + fileName);
