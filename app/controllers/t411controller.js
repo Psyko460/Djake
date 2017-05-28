@@ -16,14 +16,19 @@ clientT411.auth(config.t411.username, config.t411.password, function(err) {
 });
 
 exports.searchT411 = function(req, res) {
+  var regSearch = req.body.searchMusic.replace(/\s/g, '');
+  if(regSearch != '') {
     clientT411.search(req.body.searchMusic, function(err, result) {
         if(err) throw err;
         //  res.json(result); //open next page but send nothing
          //res.render('searchResults');
-        console.log(result.torrents);
+        // console.log(result.torrents);
         results = result.torrents;
     });
     res.render('searchResult', {result : results}) //don't send the var, don't know why
+  } else {
+    res.redirect('/dashboard');
+  }
 };
 
 // tests
