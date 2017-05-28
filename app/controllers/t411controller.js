@@ -18,11 +18,12 @@ clientT411.auth(config.t411.username, config.t411.password, function(err) {
 exports.searchT411 = function(req, res) {
     clientT411.search(req.body.searchMusic, function(err, result) {
         if(err) throw err;
-         res.json(result); //open next page but send nothing
+        //  res.json(result); //open next page but send nothing
          //res.render('searchResults');
-        results = result;
+        console.log(result.torrents);
+        results = result.torrents;
     });
-   // res.render('searchResult', {result : results}) //don't send the var, don't know why
+    res.render('searchResult', {result : results}) //don't send the var, don't know why
 };
 
 // tests
