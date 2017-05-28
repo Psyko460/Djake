@@ -47,7 +47,6 @@ module.exports = function(app, passport) {
 
 
 
-
     app.post('/registerTransmission', (req, res) => {
       if(req.body.loginTransmission != null && req.body.passwordTransmission != null && req.body.hostTransmission != null ) {
         config.transmission.username = req.body.loginTransmission;
