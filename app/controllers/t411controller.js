@@ -24,8 +24,8 @@ exports.searchT411 = function(req, res) {
          //res.render('searchResults');
         // console.log(result.torrents);
         results = result.torrents;
+        res.render('searchResult', {result : results})
     });
-    res.render('searchResult', {result : results}) //don't send the var, don't know why
   } else {
     res.redirect('/dashboard');
   }

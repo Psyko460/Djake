@@ -10,13 +10,29 @@
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  {{> navbar}}
-<h1>page searchresultat.hbs</h1>
-<p>
-  {{#each result}}
-      {{name}}; <br />
-  {{/each}}
-</p>
+{{> navbar}}
+<div class="container-fluid" style="padding-top: 1%;">
+  <table class="table table-inverse table-striped">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Ajouté le</th>
+        <th>Nombre de fois téléchargés</th>
+        <th><th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each result}}
+          <tr>
+            <td>{{name}}</td>
+            <td>{{added}}</td>
+            <td>{{times_completed}}</td>
+            <td><button type="button" class="btn btn-success btn-sm" id="{{id}}">Téléchargement</button></td>
+          </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
 
 {{> player}}
 </body>
