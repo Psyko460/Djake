@@ -28,14 +28,6 @@ exports.profil = function(req, res) {
     res.render('profil');
 };
 
-exports.options = function(req, res) {
-    torrentProvider = [];
-    for(var k in configTorrent) {
-       torrentProvider.push({name: k})
-    }
-    res.render('options', {allTorrent: torrentProvider});
-};
-
 exports.profilEdit = function(req, res){
       user.update({id: req.session.passport.user.id}, {
         username : req.body.username,

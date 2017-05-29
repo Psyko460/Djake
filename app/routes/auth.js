@@ -12,7 +12,7 @@ module.exports = function(app, passport) {
     app.get('/',notLoggedIn, authController.index);
     app.get('/logout', isLoggedIn, authController.logout);
     app.get('/dashboard',isLoggedIn, authController.dashboard);
-    app.get('/options',isLoggedIn, authController.options);
+    app.get('/options',isLoggedIn, torrentController.options);
     app.get('/informations', notLoggedIn, authController.informations);
     app.get('/profil', isLoggedIn, authController.profil );
 

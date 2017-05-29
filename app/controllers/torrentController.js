@@ -4,10 +4,26 @@ var exports = module.exports = {};
 
 const TorrentSearchApi = require('torrent-search-api');
 const torrentSearch = new TorrentSearchApi();
-torrentSearch.enableProvider('Torrent9');
+
+function enableProviderByJSON(){
+  for(var k in config) {
+    if(config[k].isActivated == 1) {
+      torrentSearch.enableProvider(k);
+    }else{
+      torrentSearch.disableProvider(k);
+    }
+  }
+  providerActive = torrentSearch.getActiveProviders();
+  if(typeof(providerActive) != 'undefined'){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 exports.searchTorrent = function(req, res) {
-        torrentSearch.search(req.body.searchMusic, 'Music', 20)
+  if( enableProviderByJSON() == true){
+    torrentSearch.search(req.body.searchMusic, 'Music', 20)
             .then(torrents => {
                 results = torrents;
                 res.render('searchResult', {result : results});
@@ -15,6 +31,8 @@ exports.searchTorrent = function(req, res) {
     }).catch(err => {
             console.log(err);
     });
+  }
+
 };
 
 exports.downloadTorrent = function(req, res){
@@ -26,7 +44,19 @@ exports.downloadTorrent = function(req, res){
     })
 };
 
+exports.options = function(req, res) {
+    torrentProvider = [];
+    allProvider = [];
+    for(var k in config) {
+      if(config[k].isActivated == 1){
+        allProvider.push({name: k, username: config[k].username, password: config[k].password, isActivated: "1"})
+      }else{
+        allProvider.push({name: k, username: config[k].username, password: config[k].password, isActivated: ""})
+      }
 
+    }
+    res.render('options', {allProviders: allProvider});
+};
 
 
 /*

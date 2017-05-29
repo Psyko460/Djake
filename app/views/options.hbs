@@ -16,10 +16,12 @@
       <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#Providers" role="tab">Choix fournisseur</a>
       </li>
-      {{#each allTorrent}}
+      {{#each allProviders}}
+      {{#if isActivated}}
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#{{name}}" role="tab" >{{name}}</a>
       </li>
+      {{/if}}
       {{/each}}
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#transmission" role="tab">Transmission</a>
@@ -31,10 +33,23 @@
         <div class="container">
           <h3 class="display-4">Choix fournisseur</h3>
           <hr />
+          <div class="form-check">
+          {{#each allProviders}}
+          <label class="form-check-label">
+           {{#if isActivated}}
+            <input type="checkbox" class="form-check-input" checked>
+            {{else}}
+            <input type="checkbox" class="form-check-input">
+            {{/if}}
+            {{name}}
+          </label>
 
+          {{/each}}
           </div>
+        </div>
       </div>
-      {{#each allTorrent}}
+      {{#each allProviders}}
+      {{#if isActivated}}
       <div class="tab-pane" id="{{name}}" role="tabpanel">
         <div class="container">
           <h3 class="display-4">{{name}}</h3>
@@ -53,6 +68,7 @@
           </form>
         </div>
       </div>
+      {{/if}}
       {{/each}}
       <div class="tab-pane" id="transmission" role="tabpanel">
         <div class="container">
