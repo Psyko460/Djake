@@ -16,18 +16,18 @@
     <thead>
       <tr>
         <th>Nom</th>
-        <th>Ajouté le</th>
-        <th>Nombre de fois téléchargés</th>
+        <th>Taille</th>
+        <th>Fournisseur</th>
         <th><th>
       </tr>
     </thead>
     <tbody>
       {{#each result}}
           <tr>
-            <td>{{name}}</td>
-            <td>{{added}}</td>
-            <td>{{times_completed}}</td>
-            <td><button type="button" class="btn btn-success btn-sm" id="{{id}}">Téléchargement</button></td>
+            <td>{{title}}</td>
+            <td>{{size}}</td>
+            <td>{{provider}}</td>
+            <td><a type="button" class="btn btn-success btn-sm" href="download/{{result}}">Téléchargement</a></td>
           </tr>
       {{/each}}
     </tbody>

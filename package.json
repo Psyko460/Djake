@@ -12,6 +12,7 @@
     "bootstrap": "4.0.0-alpha.6",
     "font-awesome":"4.7.0",
     "t411":"1.0.8",
+    "torrent-search-api":"1.0.7",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",

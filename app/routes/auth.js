@@ -1,5 +1,5 @@
 var authController = require('../controllers/authcontroller.js');
-var t411Controller = require('../controllers/t411controller.js');
+var torrentController = require('../controllers/torrentController.js');
 var fs = require('fs');
 var path = require("path");
 var fileName = path.join(__dirname, '..', 'config', 'config.json')
@@ -17,8 +17,8 @@ module.exports = function(app, passport) {
     app.get('/profil', isLoggedIn, authController.profil );
 
 
-    app.get('/resultat', t411Controller.t411Result); //tests
-    app.post('/searchT411', t411Controller.searchT411);
+    app.post('/resultat', torrentController.searchTorrent); //recherche des torrents
+    app.post('/download/:{{result}}', torrentController.downloadTorrent);
 
     app.post('/registerUser', isLoggedIn, authController.profilEdit);
 
