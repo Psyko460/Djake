@@ -32,8 +32,7 @@ exports.options = function(req, res) {
 };
 
 exports.profilEdit = function(req, res){
-    var User = user;
-      User.update({_id: req.session.passport.user.id}, {
+      user.update({id: req.session.passport.user.id}, {
         username : req.body.username,
         email: req.body.email,
         firstname: req.body.firstname,

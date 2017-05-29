@@ -20,7 +20,7 @@ module.exports = function(app, passport) {
     app.get('/resultat', t411Controller.t411Result); //tests
     app.post('/searchT411', t411Controller.searchT411);
 
-    app.post('/registerUser/{{id}}', isLoggedIn, authController.profilEdit);
+    app.post('/registerUser', isLoggedIn, authController.profilEdit);
 
     app.post('/signup', passport.authenticate('local-signup', {
             successRedirect: '/dashboard',
