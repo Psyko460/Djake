@@ -1,5 +1,6 @@
 var path = require("path");
 var config = require(path.join(__dirname, '..', 'config', 'config.json'));
+var configTorrent = require(path.join(__dirname, '..', 'config', 'configTorrent.json'));
 
 var exports = module.exports = {};
 
@@ -28,7 +29,11 @@ exports.profil = function(req, res) {
 };
 
 exports.options = function(req, res) {
-    res.render('options', {usernameT411: config.t411.username, passwordT411: config.t411.password, usernameTransmission: config.transmission.username, passwordTransmission: config.transmission.password, hostTransmission: config.transmission.hostPort});
+    torrentProvider = [];
+    for(var k in configTorrent) {
+       torrentProvider.push({name: k})
+    }
+    res.render('options', {allTorrent: torrentProvider});
 };
 
 exports.profilEdit = function(req, res){

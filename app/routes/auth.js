@@ -2,8 +2,8 @@ var authController = require('../controllers/authcontroller.js');
 var torrentController = require('../controllers/torrentController.js');
 var fs = require('fs');
 var path = require("path");
-var fileName = path.join(__dirname, '..', 'config', 'config.json')
-var config = require(path.join(__dirname, '..', 'config', 'config.json'));
+var fileName = path.join(__dirname, '..', 'config', 'configTorrent.json')
+var config = require(path.join(__dirname, '..', 'config', 'configTorrent.json'));
 
 module.exports = function(app, passport) {
 
@@ -34,7 +34,15 @@ module.exports = function(app, passport) {
         }
     ));
 
-
+    app.post('/registerProvider/:name', (req, res) => {
+      providerName = req.params.name;
+      config[providerName].username = req.body['login'+providerName]
+      config[providerName].password = req.body['password'+providerName]
+      fs.writeFile(fileName, JSON.stringify(config), (err) => {
+        if (err) return console.log(err);
+      });
+      res.redirect('/options');
+    })
 
     app.post('/registerT411', (req, res) => {
       if(req.body.loginT411 != null && req.body.passwordT411 != null ) {
