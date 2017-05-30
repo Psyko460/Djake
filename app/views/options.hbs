@@ -1,75 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Djake | Options</title>
-    <script src="/jqs/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/hbs/handlebars.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/fa/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/style.css">
+  <title>Djake | Options</title>
+  <script src="/jqs/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/hbs/handlebars.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/fa/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
+
 <body>
-{{> navbar}}
+  {{> navbar}}
   <div clas="container">
     <ul class="nav nav-tabs bg-inverse" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#Providers" role="tab">Choix fournisseur</a>
       </li>
       {{#each allProviders}}
-      {{#if isActivated}}
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#{{name}}" role="tab" >{{name}}</a>
-      </li>
-      {{/if}}
+        {{#if isActivated}}
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#{{name}}" role="tab">{{name}}</a>
+          </li>
+        {{/if}}
       {{/each}}
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#transmission" role="tab">Transmission</a>
       </li>
     </ul>
 
-    <div class="tab-content">
+  <div class="tab-content">
+
       <div class="tab-pane active" id="Providers" role="tabpanel">
         <div class="container">
           <h3 class="display-4">Choix fournisseur</h3>
           <hr />
-          <div class="form-check">
-          {{#each allProviders}}
-          <label class="form-check-label">
-           {{#if isActivated}}
-            <input type="checkbox" class="form-check-input" checked>
-            {{else}}
-            <input type="checkbox" class="form-check-input">
-            {{/if}}
-            {{name}}
-          </label>
+              {{#each allProviders}}
+                {{#if isActivated}}
+                <div class="form-group has-success">
+                  <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" name="checkbox{{name}}" checked>
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">{{name}}</span>
+                {{else}}
+                <div class="form-group has-warning">
+                  <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">{{name}}</span>
+                {{/if}}
+                  </label>
+                </div>
+              {{/each}}
+        </div>
+      </div>
 
-          {{/each}}
+      {{#each allProviders}}
+        {{#if isActivated}}
+        <div class="tab-pane" id="{{name}}" role="tabpanel">
+          <div class="container">
+            <h3 class="display-4">{{name}}</h3>
+            <hr />
+            <form id="form{{name}}" name="form{{name}}" method="post" action="/registerProvider/{{name}}">
+              <div>
+                <input class="inputSignin" name="name" placeholder="Fournisseur" type="text" value="{{name}}" disabled/>
+              </div>
+              <div>
+                <input class="inputSignin" name="login{{name}}" placeholder="Nom de compte" type="text" value="{{username}}" required />
+              </div>
+              <div>
+                <input class="inputSignin" name="password{{name}}" placeholder="Mot de passe" type="password" id="password" value="{{password}}" required />
+              </div>
+              <button class="btn btn-outline-success" type="submit">Enregistrer</button>
+            </form>
           </div>
         </div>
-      </div>
-      {{#each allProviders}}
-      {{#if isActivated}}
-      <div class="tab-pane" id="{{name}}" role="tabpanel">
-        <div class="container">
-          <h3 class="display-4">{{name}}</h3>
-          <hr />
-          <form id="form{{name}}" name="form{{name}}" method="post" action="/registerProvider/{{name}}">
-            <div>
-              <input class="inputSignin" name="name" placeholder="Fournisseur" type="text" value="{{name}}" disabled/>
-            </div>
-            <div>
-              <input class="inputSignin" name="login{{name}}" placeholder="Nom de compte" type="text" value="{{username}}" required />
-            </div>
-            <div>
-              <input class="inputSignin" name="password{{name}}" placeholder="Mot de passe" type="password" id="password" value="{{password}}" required />
-            </div>
-            <button class="btn btn-outline-success" type="submit">Enregistrer</button>
-          </form>
-        </div>
-      </div>
-      {{/if}}
+        {{/if}}
       {{/each}}
+
       <div class="tab-pane" id="transmission" role="tabpanel">
         <div class="container">
           <h3 class="display-4">Transmission</h3>
@@ -88,8 +97,10 @@
           </form>
         </div>
       </div>
-    </div>
+
   </div>
-{{> player}}
+
+  {{> player}}
 </body>
+
 </html>
